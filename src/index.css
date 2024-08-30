@@ -11,13 +11,93 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+  /* LITTLE LEMON COLORS */
+  --primary-color-green: #495E57;
+  --primary-color-yellow: #F4CE14;
+  --secondary-color-1: #EE9972;
+  --secondary-color-2: #FBDABB;
+  --highlights-color-1: #EDEFEE;
+  --highlights-color-2: #333333;
+
+  /* LITTLE LEMON FONT*/
+  .markazi {
+    font-family: 'Markazi Text'
+  }
+
+  .karla {
+    font-family: 'Karla'
+  }
+
+  #hero {
+    background-color: var(--primary-color-green);
+    text-align: center;
+  }
+
+  #hero h1 {
+    color: var(--primary-color-yellow);
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  #hero h2,
+  p {
+    color: var(--highlights-color-1);
+  }
+
+  button {
+    color: var(--highlights-color-2);
+    background-color: var(--primary-color-yellow);
+    box-shadow: 0 0px 6px 0px;
+    transition: .3s;
+  }
+
+  button:hover {
+    color: var(--primary-color-yellow);
+    background-color: var(--highlights-color-1);
+    transition: .5s;
+
+  }
+
+}
+
+form {
+  display: grid;
+  min-width: 18rem;
+  width: 30rem;
+  /* margin: 5vh; */
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid transparent;
+  /* border-color: var(--highlights-color-2); */
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 6px 2px var(--primary-color-green);
+}
+
+label {
+  margin-left: 0.5rem;
+}
+
+input,
+select {
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 1px solid;
+  border-color: var(--secondary-color-2);
+  border-radius: 0.5rem;
+}
+input:focus-visible,select:focus-visible{
+  outline: var(--secondary-color-1) auto 1px;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--highlights-color-2);
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -30,9 +110,30 @@ body {
   min-height: 100vh;
 }
 
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+header {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+
+
+li {
+  margin: 1vw;
+}
+
+main {
+  display: grid;
+}
+
+ul {
+  list-style: none;
+  display: flex;
 }
 
 button {
@@ -46,9 +147,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -59,9 +162,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
