@@ -1,7 +1,30 @@
+
+
+import { useState } from "react";
+
 export function Main() {
+  // const see = today.toISOString()
+  // console.log(see)
+  // const [minDate, setMinDate] = useState('2024-08-30')
+
+  const minDate = () => {
+    const today = new Date()
+    return today.toISOString().split('T')[0];
+  }
+
+  const maxDate = () => {
+    const today = new Date()
+    const nextWeek = new Date(today);
+    nextWeek.setDate(today.getDate() + 7);
+    return nextWeek.toISOString().split('T')[0];
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    const data = new FormData(e.target)
+    const dataObject = Object.fromEntries(data.entries());
+    console.log(dataObject)
   }
 
   return (
@@ -12,7 +35,7 @@ export function Main() {
       </section>
       <form onSubmit={handleSubmit}>
         <label htmlFor="res-date">Choose date</label>
-        <input type="date" name="res-date" id="res-date" />
+        <input type="date" name="res-date" id="res-date" min={minDate()} max={maxDate()} />
         <label htmlFor="res-time">Choose time</label>
         <select name="res-time" id="res-time">
           <option>17:00</option>

@@ -4,7 +4,7 @@ export function Navbar() {
   return (
     <header>
       <img src={logo} alt="Little Lemon Logo" />
-      <nav>
+      <nav data-testid="nav">
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
